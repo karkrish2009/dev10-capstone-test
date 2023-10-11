@@ -1,14 +1,14 @@
 function App() {
-  let showModal = true;
-
   return (
       <div className='App'>
-          <div className={showModal === false ? 'hide' : 'show'}>
-              A Modal Element
-          </div>
+          {/* Define the click handler callback function anonymously */}
+          <button onClick={() => console.log('button clicked')}>
+              Click me!
+          </button>
       </div>
   );
 }
 
 export default App;
+
 
