@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import TableHead from "./TableHead";
 import GameRow from "./GameRow";
 
@@ -69,7 +69,7 @@ export default function GameList({gamesData, handleGamesData}) {//{ preferences 
             .catch(error => {
                 console.error(error); // Log for debugging
             });
-    }, []);
+    }, [apiUrl, handleGamesData]);
     //  console.log(games);
 
     return (

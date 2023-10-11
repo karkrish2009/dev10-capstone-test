@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GameForm from './components/GameForm';
 import Landing from "./components/Landing";

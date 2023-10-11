@@ -52,7 +52,7 @@ export default function GameForm() {
       };
 
       function handleChange(event) {
-        const { name, value, options } = event.target;
+        const { name, value } = event.target;
     
         // Check if the target element is a select element
        
