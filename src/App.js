@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import GameForm from './components/GameForm';
 import Landing from "./components/Landing";
 import GameList from './components/GameList';
