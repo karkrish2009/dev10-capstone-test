@@ -1,27 +1,25 @@
 //import logo from './logo.svg';
 import './App.css';
-import { useState } from "react";
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import GameForm from './components/GameForm';
-import Landing from "./components/Landing";
-import GameList from './components/GameList';
-
 
 function App() {
-  const [gamesData, setGamesData] = useState([]);
-  const handleGamesData=(gamesData)=>{
-    setGamesData(gamesData);
-  }
-  return (
-    <Router>
-      
-      <Routes>
-        <Route path='/' element={<Landing />}></Route>
-        <Route path='/preferences' element={<GameForm />}></Route>
-        <Route path='/results' element={<GameList gamesData={gamesData} handleGamesData={handleGamesData}/>}></Route>
-      </Routes>
-    </Router>
-  );
+    return (
+        <div className='App'>
+            <header className='App-header'>
+                
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
+                <a
+                    className='App-link'
+                    href='https://reactjs.org'
+                    target='_blank'
+                    rel='noopener noreferrer'>
+                    Learn React
+                </a>
+            </header>
+        </div>
+    );
 }
 
 export default App;
+
