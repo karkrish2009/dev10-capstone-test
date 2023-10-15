@@ -1,18 +1,21 @@
-function App() {
-  // Click handler function defined here
-  function handleClick() {
-      alert('button clicked');
-  }
+import { Fragment } from 'react'; // Import Fragment out of the React package
 
-  return (
-      <div className='App'>
-          {/* Pass the reference to the click handler to the onClick prop */}
-          <button onClick={handleClick}>Click me!</button>
-      </div>
-  );
+function App() {
+    const pet = {
+        name: 'Snoopy',
+        breed: 'Beagle',
+        age: 8,
+    };
+
+    return (
+        <Fragment>
+            <h1>Name: {pet.name}</h1>
+            <p>Breed: {pet.breed}</p>
+            <p>Age: {pet.age} years</p>
+        </Fragment>
+    );
 }
 
 export default App;
-
 
 
