@@ -1,6 +1,4 @@
-function HelloButton() {
-    return <button onClick={() => console.log('Hello!')}>Click</button>;
-}
+import HelloButton from './components/HelloButton.js';
 
 function App() {
     return (
@@ -10,6 +8,7 @@ function App() {
         </div>
     );
 }
+
 
 export default App;
 
