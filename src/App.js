@@ -1,14 +1,14 @@
-import HelloButton from './components/HelloButton.js';
+import Header from './components/Header';
+import PetCards from './components/PetCards';
 
 function App() {
     return (
         <div>
-            <h1>Hello World</h1>
-            <HelloButton />
+            <Header />
+            <PetCards />
         </div>
     );
 }
-
 
 export default App;
 
