@@ -1,9 +1,9 @@
-export default function RectangularDimensions({length, breadth, height}) {
+export default function RectangularDimensions({dimensions}) {
     return (
         <ul>
-            <li>Length: {length} </li>
-            <li>Breadth: {breadth}</li>
-            <li>Height: {height}</li>
+            <li>Length: {dimensions.length} </li>
+            <li>Breadth: {dimensions.breadth}</li>
+            <li>Height: {dimensions.height}</li>
         </ul>
     );
 }

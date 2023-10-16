@@ -1,8 +1,9 @@
-export default function TempSettings () {
+export default function TempSettings ({setting}) {
     return (
         <ul>
-            <li>Set Temperature: </li>
-            <li>Actual Temperature:</li>
+            <li>Start Time: {setting.startTime}</li>
+            <li>End Time: {setting.endTime}</li>
+            <li>Set Temperature: {setting.setTemp}</li>
         </ul>
     );
 }

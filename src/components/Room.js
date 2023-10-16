@@ -12,9 +12,9 @@ export default function Room({room}) {
                 <h2>Name: {room.name} </h2>
                 <h3>Description: {room.description} </h3>
                 <h3>Shape</h3>
-                <RectangularDimensions length={room.length} breadth={room.breadth} height={room.height} />
+                <RectangularDimensions dimensions={room.dimensions} />
                 <h3>Temperature Settings</h3>
-                <TempSettings />
+                {room.tempSettings.map(setting => <TempSettings setting={setting} />)}
             </div>
             <div>
                 <a href='/'>Edit</a><br />
