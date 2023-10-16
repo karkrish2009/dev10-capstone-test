@@ -1,11 +1,11 @@
 import Header from './components/Header';
-import PetCards from './components/PetCards';
+import Rooms from './components/Rooms';
 
 function App() {
     return (
         <div>
             <Header />
-            <PetCards />
+            <Rooms />
         </div>
     );
 }
