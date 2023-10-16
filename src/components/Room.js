@@ -1,15 +1,8 @@
 import RectangularDimensions from './RectangularDimensions';
 import TempSettings from './TempSettings';
 
-export default function Room() {
-    const room = {
-        roomId: 1,
-        name: 'Family Room',
-        description: 'TV post-dinner gathering place',
-        length: 20,
-        breadth: 10,
-        height: 10
-    };
+export default function Room({room}) {
+    console.log("I am here");
     return (
         <div>
             <div>
@@ -24,7 +17,7 @@ export default function Room() {
                 <TempSettings />
             </div>
             <div>
-                <a href='/'>Edit</a>
+                <a href='/'>Edit</a><br />
                 <a href='/'>Delete</a>
             </div>
         </div>

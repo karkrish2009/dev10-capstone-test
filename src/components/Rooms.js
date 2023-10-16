@@ -1,43 +1,44 @@
 import Room from './Room';
 
 export default function Rooms() {
-    const pets = [
-        {
-            petId: 1,
-            name: 'Wishbone',
-            type: 'DOG',
-            breed: 'Jack Russell Terrier',
-            dob: '2015-05-05',
-            adopted: true,
-            vaccinationStatus: 'UNKNOWN',
-            imageUrl: 'https://i.imgur.com/yGzjvPj.jpg',
+    const rooms = [{
+            roomId: 1,
+            name: 'Living Room',
+            description: 'meeting guests, vistors',
+            length: 20,
+            breadth: 10,
+            height: 10
         },
         {
-            petId: 2,
-            name: 'Whiskers',
-            type: 'CAT',
-            breed: 'Tabby',
-            dob: '2020-01-01',
-            adopted: false,
-            vaccinationStatus: 'UP_TO_DATE',
-            imageUrl: 'https://i.imgur.com/vlnDvGW.jpg',
+            roomId: 2,
+            name: 'Family Room',
+            description: 'TV post-dinner gathering place',
+            length: 32,
+            breadth: 22,
+            height: 12
         },
         {
-            petId: 3,
-            name: 'Archie',
-            type: 'DOG',
-            breed: 'Golden Retriever',
-            dob: '2022-12-15',
-            adopted: false,
-            vaccinationStatus: 'NOT_UP_TO_DATE',
-            imageUrl: 'https://i.imgur.com/IeR2bMU.jpg',
+            roomId: 3,
+            name: 'Kitchen',
+            description: 'Cooking and informal eating',
+            length: 15,
+            breadth: 25,
+            height: 10
         },
+        {
+            roomId: 4,
+            name: 'Bedroom',
+            description: 'We sleep here',
+            length: 18,
+            breadth: 28,
+            height: 10
+        }
     ];
     
     return (
         <div>
             <button>Add a Room</button>
-            <Room />
+            { rooms.map(room => <Room room={room} key={room.id} />)} 
         </div>
     );
 }
