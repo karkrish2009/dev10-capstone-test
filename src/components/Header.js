@@ -1,3 +1,9 @@
+import Nav from './Nav';
+
 export default function Header() {
-    return <header>I am the header component!</header>;
+    return (
+        <header>
+            <Nav />
+        </header>
+    );
 }
