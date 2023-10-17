@@ -1,26 +1,26 @@
 export default function Nav() {
     return (
-        <nav>
-            <div>
-                <a href='/'>Energy Setting</a>
-                <ul>
-                    <li>
-                        <a href='/'>Home</a>
+        <nav className='navbar navbar-expand-lg navbar-light bg-light'> 
+            <div className='d-flex'>
+                <a className='navbar-brand' href='/'>Energy Setting</a>
+                <ul className='navbar-nav'>
+                    <li className='nav-item'>
+                        <a className='nav-link vt323-font' href='/'>Home</a>
                     </li>
-                    <li>
-                        <a href='/'>Rooms</a>
+                    <li className='nav-item'>
+                        <a className='nav-link vt323-font' href='/'>Rooms</a>
                     </li>
-                    <li>
-                        <a href='/'>Preferences</a>
+                    <li className='nav-item'>
+                        <a className='nav-link vt323-font' href='/'>Preferences</a>
                     </li>
-                    <li>
-                        <a href='/'>Contact</a>
+                    <li className='nav-item'>
+                        <a className='nav-link vt323-font' href='/'>Contact</a>
                     </li>
-                    <li>
-                        <a href='/'>Sign Up</a>
+                    <li className='nav-item'>
+                        <a className='nav-link vt323-font' href='/'>Sign Up</a>
                     </li>
-                    <li>
-                        <a href='/'>Log In</a>
+                    <li className='nav-item'>
+                        <a className='nav-link vt323-font' href='/'>Log In</a>
                     </li>
                 </ul>
             </div>

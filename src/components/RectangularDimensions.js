@@ -1,9 +1,12 @@
 export default function RectangularDimensions({dimensions}) {
+    const smallerTextStyles = {
+        fontSize: '20px',
+    };
     return (
-        <ul>
-            <li>Length: {dimensions.length} </li>
-            <li>Breadth: {dimensions.breadth}</li>
-            <li>Height: {dimensions.height}</li>
+        <ul className='card-text'>
+            <li style={smallerTextStyles}>Length: {dimensions.length} </li>
+            <li style={smallerTextStyles}>Breadth: {dimensions.breadth}</li>
+            <li style={smallerTextStyles}>Height: {dimensions.height}</li>
         </ul>
     );
 }
