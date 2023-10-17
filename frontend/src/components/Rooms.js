@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default function  Rooms() {
+export default function Rooms() {
     const rooms = [{
             roomId: 1,
             name: 'Living Room',
