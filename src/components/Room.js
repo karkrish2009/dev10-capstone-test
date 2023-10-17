@@ -1,7 +1,11 @@
 import RectangularDimensions from './RectangularDimensions';
 import TempSettings from './TempSettings';
+import { useParams, Link } from 'react-router-dom';
+
 
 export default function Room() {
+    const { id } = useParams();
+
     const backgroundColorStyles = {
         backgroundColor: '#B5C689',
         padding: '20px',
@@ -18,7 +22,7 @@ export default function Room() {
 
     return (
         <div>
-            <p>I am here</p>
+            <p>I am here {id}</p>
         </div>
     );
 }
