@@ -138,12 +138,10 @@ export default function Rooms() {
             <div className="game-cards-container">
             {rooms.map((room) => (
                
-                <Link to={`/rooms/${room.roomId}`} key={room.roomId} room={room}>
+                <Link to={`/rooms/${room.roomId}`} key={room.roomId}>
                     <div className="game-card">
                         <div className="game-card-image">
-                            <img src={room.imageUrl} alt={room.name} 
-                            alt={`${room.name} is for ${room.description}`}
-                            />
+                            <img src={room.imageUrl} alt={room.name} />
                             <div className="game-name-overlay">
                                 <p style={largerTextStyles}>Name: {room.name}</p>
                                 <p style={largerTextStyles}>Description: {room.description}</p>
