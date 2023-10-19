@@ -5,7 +5,7 @@ import React from "react"
 import { useState, useEffect } from "react";
 
 
-export default function Room() {
+export default function  Room() {
     const { id } = useParams();
 
     const [gameDetails, setGameDetails] = useState(null);
