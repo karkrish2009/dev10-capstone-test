@@ -1,11 +1,10 @@
 package learn.energy.controllers;
 import learn.energy.domain.RoomService;
 import learn.energy.models.Room;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/room")
@@ -22,9 +21,12 @@ public class RoomController {
         return service.findAll();
     }
 
-    @GetMapping("/{houseId}")
-    public List<Room> findByHouseId(@PathVariable int houseId) {
-        return service.findByHouseId(houseId);
+    @GetMapping("/{roomId}")
+    public Room findByRoomId(@PathVariable int roomId) {
+        Optional<Room> returnVal = service.findByRoomId(roomId);
+        System.out.println(returnVal);
+        return returnVal.orElse(null);
+
     }
 
 }

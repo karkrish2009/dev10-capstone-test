@@ -15,6 +15,7 @@ export default function Room() {
         console.log("I am here 1");
         fetchGameDetails(id)
           .then((data) => {
+            console.log(data);
             setGameDetails(data);
             //console.log("gameDetails", gameDetails.roomName);
           })
@@ -28,7 +29,7 @@ export default function Room() {
     const fetchGameDetails = async(id) => {
         try {
           console.log("I am here ", id);
-          const response = await fetch(("http://localhost:8080/api/room/" + 2),
+          const response = await fetch(("http://localhost:8080/api/room/" + id),
            {
             method: "GET"
             }
@@ -40,8 +41,8 @@ export default function Room() {
           }
     
           const data = await response.json();
-          console.log("data", data[0]);
-          return data[0];
+          console.log("data", data);
+          return data;
         } catch (error) {
           throw new Error('Error fetching game details');
         }
