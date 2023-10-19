@@ -12,11 +12,11 @@ export default function Room() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        console.log("I am here 1");
         fetchGameDetails(id)
-          .then(console.log(id))
           .then((data) => {
             setGameDetails(data);
-            console.log("gameDetails", gameDetails.roomName);
+            //console.log("gameDetails", gameDetails.roomName);
           })
           .catch((error) => {
             console.error('Error fetching game details:', error);
@@ -25,10 +25,10 @@ export default function Room() {
     }, [id]);
 
 
-      const fetchGameDetails = async(id) => {
+    const fetchGameDetails = async(id) => {
         try {
           console.log("I am here ", id);
-          const response = await fetch(("http://localhost:8080/api/room/" + id),
+          const response = await fetch(("http://localhost:8080/api/room/" + 2),
            {
             method: "GET"
             }
@@ -45,7 +45,8 @@ export default function Room() {
         } catch (error) {
           throw new Error('Error fetching game details');
         }
-      };
+    };
+
     const backgroundColorStyles = {
         backgroundColor: '#B5C689',
         padding: '20px',
@@ -60,12 +61,29 @@ export default function Room() {
         fontSize: '15px',
     };
 
+    if (error) {
+        return (
+          <div>
+            <p>Error: {error.message}</p>
+            <Link to="/">Back to Home</Link>
+          </div>
+        );
+    }
+    
+      
+    
+
+    if (gameDetails === null) {
+        return <div>Loading...</div>;
+    } else {
+
     return (
         <div style={backgroundColorStyles}>
             <h1 style={{ textAlign: "center", fontFamily: "'Press Start 2P', sans-serif" }}>{gameDetails.roomName}</h1>
             <p style={largerTextStyles}>Description: {gameDetails.roomDescription}</p>
         </div>
     );
+}
 }
 
 /*
