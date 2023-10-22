@@ -3,11 +3,22 @@ create database building_energy;
 use building_energy;
 
 -- create tables and relationships
+create table homeowner (
+	owner_id int primary key auto_increment,
+    owner_first_name varchar(50),
+    owner_last_name varchar(50),
+    owner_email varchar(150)
+);
+
 create table house (
     house_id int primary key auto_increment,
     street_address varchar(250) not null,
     city varchar(250),
-    zip_code varchar(5)
+    zip_code varchar(5),
+    owner_id int,
+	constraint fk_owner_house_id
+        foreign key (owner_id)
+        references homeowner(owner_id)
 );
 
 create table room (
@@ -48,18 +59,14 @@ create table sensor (
         references room(room_id)
 );
 
-create table home_owner (
-	owner_id int primary key auto_increment,
-    owner_first_name varchar(50),
-    owner_last_name varchar(50),
-    owner_email varchar(50),
-    owner_password varchar(50),
-    house_id int
-);
+insert into homeowner(owner_id, owner_first_name, owner_last_name, owner_email) values
+	(1, 'B', 'K', 'bk@gmail.com'),
+    (2, 'C', 'M', 'cm@gmail.com');
 
-insert into house(house_id, street_address, city, zip_code ) values
-        (1, '6 LakeShore', 'Chicago', '45678'),
-        (2, '24 Pennsylvania', 'Philadelphia', '99909');
+insert into house(house_id, street_address, city, zip_code, owner_id ) values
+        (1, '6 LakeShore', 'Chicago', '45678', 1),
+        (6, '12 Abbey Road', 'SF', '12345', 2),
+        (3, '24 Pennsylvania', 'Philadelphia', '99909', 1);
         
 insert into room(room_id, room_name, room_description, image_url, length, breadth, height, x_coord, y_coord, house_id ) values
         (1, 'Living Room', 'meeting guests, vistors',

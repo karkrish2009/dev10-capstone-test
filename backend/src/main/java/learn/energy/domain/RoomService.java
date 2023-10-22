@@ -21,9 +21,6 @@ public class RoomService {
         return repository.findAll();
     }
 
-    public List<Room> findByHouseId(int houseId) {
-        return repository.findByHouseId(houseId);
-    }
 
     public Optional<Room> findByRoomId(int roomId) {
         return repository.findById(roomId);

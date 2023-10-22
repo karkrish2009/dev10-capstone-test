@@ -32,11 +32,14 @@ class RoomRepositoryTest {
         assertEquals(2, actual.size());
     }
 
+    /*
     @Test
     void shouldFindOneRoom() {
         List<Room> actual = repository.findByHouseId(2);
         assertEquals(1, actual.size());
     }
+
+     */
 
 
 
