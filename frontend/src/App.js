@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(true);
-    const[isUserId, setisUserId]= useState(1);
+    const[isUserId, setisUserId]= useState(2);
     const [roomsData, setRoomsData] = useState([]);
     const handleRoomsData=(roomsData)=>{
         setRoomsData(roomsData);
