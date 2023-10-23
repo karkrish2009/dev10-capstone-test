@@ -1,13 +1,18 @@
 import Rooms from './Rooms';
+import RectangularShape from './RectangularShape';
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { INITIAL_VALUE, ReactSVGPanZoom, TOOL_NONE } from "react-svg-pan-zoom";
 import { useState } from 'react';
 
-export default function Floorplan() {
+export default function Floorplan({roomsData, handleRoomsData}) {
+    
+    console.log("In floor plan", roomsData);
+
     
     
     return (
+        
         <div className="container">
             <div className="item floorplan">
                 <div style={{ width: "100%", height: "100%" }}>
@@ -15,20 +20,23 @@ export default function Floorplan() {
                     xmlns="http://www.w3.org/2000/svg"
                     id="Layer_1"
                     data-name="Layer 1"
-                    viewBox="0 0 200 350"
+                    viewBox="0 0 500 550"
                     >
-                        <rect
-                            class="cls-1"
-                            x="0"
-                            y= "0"
-                            width= "50"
-                            height="101.04"
+                    {roomsData.map((room) => (
+                        <RectangularShape
+                            x= {room.xCoord}
+                            y= {room.yCoord}
+                            length= {room.length}
+                            breadth={room.breadth}
+                            key={room.roomId}
                         />
+                    ))}
                     </svg>
+                    
                 </div>
             </div>
-        </div>
-    );
+        </div> 
+    ); 
 }
 
 /*

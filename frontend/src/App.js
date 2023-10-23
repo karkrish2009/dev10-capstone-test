@@ -23,7 +23,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Landing />} />
                 <Route path='/selection' element={<Houses isUserId={isUserId} />} />
-                <Route path="/floorplan" element={<Floorplan />} />
+                <Route path="/floorplan" element={<Floorplan roomsData={roomsData} handleRoomsData={handleRoomsData}/>} />
                 <Route path="/results" element={<Rooms roomsData={roomsData} handleRoomsData={handleRoomsData} />} />
                 <Route path="/rooms/:id" element={<Room />} />   
             </Routes>

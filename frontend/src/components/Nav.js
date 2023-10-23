@@ -29,7 +29,7 @@ export default function Nav({ isAuthenticated }) {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link vt323-font" to="/displayResults">
+                                <NavLink className="nav-link vt323-font" to="/results">
                                     Results
                                 </NavLink>
                             </li>

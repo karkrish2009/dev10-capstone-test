@@ -37,8 +37,8 @@ export default function Rooms({roomsData, handleRoomsData}) {
         fetchExistingRooms()
         .then((existingRooms) => {
         // Populated form fields with existing preferences
-            console.log("Existing rooms are:", existingRooms);
-            handleRoomsData(existingRooms);
+            console.log("Existing rooms are:", existingRooms.rooms);
+            handleRoomsData(existingRooms.rooms);
             })
         .catch((error) => {
         console.error("An error occurred:", error);
@@ -46,7 +46,7 @@ export default function Rooms({roomsData, handleRoomsData}) {
     }, []); 
 
     
-    
+    /*
     const rooms = [{
             roomId: 1,
             name: 'Living Room',
@@ -170,7 +170,7 @@ export default function Rooms({roomsData, handleRoomsData}) {
         }
         
     ];
-    
+    */
     const largerTextStyles = {
         fontSize: '25px',
     };
@@ -179,15 +179,15 @@ export default function Rooms({roomsData, handleRoomsData}) {
         <div className="library-container">
             <button className='btn btn-primary mb-3'>Add a Room</button>
             <div className="game-cards-container">
-            {rooms.map((roomsData) => (
+            {roomsData.map((room) => (
                
-                <Link to={`/rooms/${roomsData.roomId}`} key={roomsData.roomId}>
+                <Link to={`/rooms/${room.roomId}`} key={room.roomId}>
                     <div className="game-card">
                         <div className="game-card-image">
-                            <img src={roomsData.imageUrl} alt={roomsData.name} />
+                            <img src={room.imageUrl} alt={room.name} />
                             <div className="game-name-overlay">
-                                <p style={largerTextStyles}>Name: {roomsData.name}</p>
-                                <p style={largerTextStyles}>Description: {roomsData.description}</p>
+                                <p style={largerTextStyles}>Name: {room.name}</p>
+                                <p style={largerTextStyles}>Description: {room.description}</p>
                             </div>
                         </div>
 

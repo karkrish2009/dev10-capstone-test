@@ -9,24 +9,7 @@ export default function Landing() {
     
     return (
         <div className="container">
-            <div className="item floorplan">
-                <div style={{ width: "100%", height: "100%" }}>
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="Layer_1"
-                    data-name="Layer 1"
-                    viewBox="0 0 200 350"
-                    >
-                        <rect
-                            class="cls-1"
-                            x="0"
-                            y= "0"
-                            width= "50"
-                            height="101.04"
-                        />
-                    </svg>
-                </div>
-            </div>
+            <p>In Construction</p>
         </div>
     );
 }

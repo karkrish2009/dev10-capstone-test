@@ -70,10 +70,10 @@ insert into house(house_id, street_address, city, zip_code, owner_id ) values
         
 insert into room(room_id, room_name, room_description, image_url, length, breadth, height, x_coord, y_coord, house_id ) values
         (1, 'Living Room', 'meeting guests, vistors',
-        "https://photos.zillowstatic.com/i_g/IS9t4g9yhe8v901000000000.jpg", 20, 10, 10, 50, 50, 1),
+        "https://photos.zillowstatic.com/i_g/IS9t4g9yhe8v901000000000.jpg", 200, 10, 10, 150, 150, 1),
 		(2, 'Family Room', 'TV post-dinner gathering place',
         "https://photos.zillowstatic.com/fp/0d24279d2c4273aca2c1c7d86d98d219-uncropped_scaled_within_1344_1008.jpg",
-        32, 22, 12, 150, 150, 1),
+        32, 22, 12, 50, 50, 1),
         (3, 'Kitchen', 'Cooking and informal eating',
         "https://www.stevewilliamskitchens.co.uk/wp-content/uploads/2015/11/kitchen-interior-design-ideas-gallery2.jpg",
 		15, 15, 10, 300, 300, 1),
