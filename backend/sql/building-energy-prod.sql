@@ -76,6 +76,6 @@ insert into room(room_id, room_name, room_description, image_url, length, breadt
         150, 80, 12, 200, 30, 1),
         (3, 'Kitchen', 'Cooking and informal eating',
         "https://www.stevewilliamskitchens.co.uk/wp-content/uploads/2015/11/kitchen-interior-design-ideas-gallery2.jpg",
-		115, 215, 10, 280, 110, 1),
+		115, 215, 10, 280, 110, 6),
 		(4, 'Bedroom','We sleep here',"https://cdn.trendir.com/wp-content/uploads/2018/04/rustic-green-bedroom.jpg",
 		80, 180, 15, 0, 180, 1);

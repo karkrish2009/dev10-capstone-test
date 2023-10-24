@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import "../App.css";
 import HouseList from "./HouseList";
 
-export default function Houses({ isUserId }) {
+export default function Houses({ isUserId, isHouseId, handleHouseId }) {
     const [formData, setFormData] = useState([{
       userId: isUserId,
       houses: ""
@@ -39,7 +39,8 @@ export default function Houses({ isUserId }) {
         event.preventDefault();
         try {
           console.log("I am in handleFormSubmit", formData)
-          navigate("/results", { state: { formData } });
+          handleHouseId(formData.houses[0]);
+          navigate("/results");
         } catch (error) {
           console.error("An error occurred:", error);
         }

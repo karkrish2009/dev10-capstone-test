@@ -10,11 +10,16 @@ import { useState } from 'react';
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(true);
-    const[isUserId, setisUserId]= useState(1);
+    const[isUserId, setisUserId]= useState(2);
     const [roomsData, setRoomsData] = useState([]);
     const handleRoomsData=(roomsData)=>{
         setRoomsData(roomsData);
+    }
+    const [isHouseId, setHouseId] = useState(0);
+    const handleHouseId=(houseId)=>{
+        setHouseId(houseId);
       }
+
 
     
     return (
@@ -22,9 +27,9 @@ function App() {
             <Header isAuthenticated={isAuthenticated}/>
             <Routes>
                 <Route path='/' element={<Landing />} />
-                <Route path='/selection' element={<Houses isUserId={isUserId} />} />
-                <Route path="/floorplan" element={<Floorplan roomsData={roomsData} handleRoomsData={handleRoomsData}/>} />
-                <Route path="/results" element={<Rooms roomsData={roomsData} handleRoomsData={handleRoomsData} />} />
+                <Route path='/selection' element={<Houses isUserId={isUserId} isHouseId={isHouseId} handleHouseId={handleHouseId} />} />
+                <Route path="/floorplan" element={<Floorplan roomsData={roomsData} handleRoomsData={handleRoomsData}  />} />
+                <Route path="/results" element={<Rooms roomsData={roomsData} handleRoomsData={handleRoomsData} isHouseId={isHouseId} />} />
                 <Route path="/rooms/:id" element={<Room />} />   
             </Routes>
         </Router>

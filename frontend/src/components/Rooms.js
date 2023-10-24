@@ -3,18 +3,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
-export default function Rooms({roomsData, handleRoomsData}) {
-    const { state } = useLocation();
-    const formData = state?.formData || {};
+export default function Rooms({roomsData, handleRoomsData, isHouseId}) {
+    //const { state } = useLocation();
+    const formData = {};
 
-    console.log("I am now in rooms", formData.houses[0]);
+    console.log("I am now in rooms", isHouseId);
+    const navigate = useNavigate();
+
+    if (isHouseId === 0) {
+        navigate("/selection");
+    }
 
     
     const fetchExistingRooms = async () => {
         try {
-          const response = await fetch(`http://localhost:8080/api/house/` + formData.houses[0], {
+          const response = await fetch(`http://localhost:8080/api/house/` + isHouseId, {
             method: "GET",
           });
     
@@ -34,15 +40,17 @@ export default function Rooms({roomsData, handleRoomsData}) {
       // Then, in your useEffect, handle the result:
     
       useEffect(() => {
-        fetchExistingRooms()
-        .then((existingRooms) => {
+        
+            fetchExistingRooms()
+            .then((existingRooms) => {
         // Populated form fields with existing preferences
-            console.log("Existing rooms are:", existingRooms.rooms);
-            handleRoomsData(existingRooms.rooms);
-            })
-        .catch((error) => {
-        console.error("An error occurred:", error);
-      });
+                console.log("Existing rooms are:", existingRooms.rooms);
+                handleRoomsData(existingRooms.rooms);
+                })
+            .catch((error) => {
+            console.error("An error occurred:", error);
+            });
+        
     }, []); 
 
     
