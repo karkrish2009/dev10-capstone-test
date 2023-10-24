@@ -1,4 +1,5 @@
 import Rooms from './Rooms';
+import CountdownClock from './CountdownClock.js';
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { INITIAL_VALUE, ReactSVGPanZoom, TOOL_NONE } from "react-svg-pan-zoom";
@@ -10,6 +11,7 @@ export default function Landing() {
     return (
         <div className="container">
             <p>In Construction</p>
+            <CountdownClock />
         </div>
     );
 }
